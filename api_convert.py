@@ -58,6 +58,10 @@ def API_response(gene_name):
     return results
 
 def create_IDList():
+    """
+    Calls upon the API response function to general a list of UNIPROT IDs
+    based on the given list of gene names.
+    """
     file_names = []
     with os.scandir('./Data') as entries:
         counter = 1
@@ -97,6 +101,9 @@ def create_IDList():
     return "Exit"
 
 def user_control():
+    """
+    Enables the text user interface for the API conversion process
+    """
     print("Please select from the following: \n (a) Generate UNIPROT ID file from Gene file (.csv) \n (b) A UNIPROT ID file has already been generated \n (c) Exit \n")
     user_input = input("Selection: ")
 
