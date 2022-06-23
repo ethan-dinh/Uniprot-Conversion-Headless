@@ -14,6 +14,10 @@ import requests
 
 # Importing CSV File for GENES
 def import_csv(filename):
+    """
+    Imports the a csv file containing a list of genes and returns the 
+    genes as a list object
+    """
     with open(filename, 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
         next(csv_reader)
@@ -24,6 +28,10 @@ def import_csv(filename):
     return genes   
 
 def nameChecker(name):
+    """
+    Determines if a filename contains .csv extension. If it does not, the
+    program will fix it automatically. 
+    """
     try:
         name = int(name)
         return name
