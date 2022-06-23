@@ -25,7 +25,7 @@ def import_csv(filename):
         for row in csv_reader:
             genes.append(row[0])
 
-    return genes   
+    return genes
 
 def nameChecker(name):
     """
@@ -42,6 +42,9 @@ def nameChecker(name):
             return name + ".csv"
 
 def API_response(gene_name):
+    """
+    Interprets the response from the UNIPROT API
+    """
     api_url = f"https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:9606+AND+gene:{gene_name}&format=tsv"
     response = requests.get(api_url)
 
